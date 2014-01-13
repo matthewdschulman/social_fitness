@@ -9,9 +9,12 @@
     </section>
     <section>
       <%= render 'shared/stats' %>
-    </section>
+    </section>    
   </aside>
   <div class="span8">
+    <div style="margin-bottom:25px">
+      <%= link_to "Make New Post", root_path, class: "btn btn-large btn-primary" %>
+    </div>
     <%= render 'follow_form' if signed_in? %>	    <% if @user.microposts.any? %>
 	      <h3>Posts (<%= @user.microposts.count %>)</h3>
 	      <ol class="microposts">
