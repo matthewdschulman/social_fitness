@@ -18,17 +18,24 @@
   </div>
 
 <% else %>  
-  <div class="center hero-unit">
-    <h1>Welcome to the Sample App</h1>
+  <div class="row" style="background:#e2f1ff; position:relative; bottom:19px">
+    <div class="span6 offset3" style="text-align:center; margin-top:5px">
+      <%= form_for(:session, url: sessions_path) do |f| %>
 
-    <h2>
-      This is the home page for the
-      <a href="http://railstutorial.org/">Ruby on Rails Tutorial</a>
-      sample application.
-    </h2>
+        <%= f.label :email %>
+        <%= f.text_field :email %>
 
-    <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+
+        <div style="margin-top:7px">
+          <%= f.submit "Sign in", class: "btn btn-large btn-primary" %>
+        </div>
+
+      <% end %>
+    </div>
   </div>
-
-  <%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>
+  <div style="text-align:center; margin-bottom: 30px; margin-top: 20px">
+    <%= link_to "Create New Account", signup_path, class: "btn btn-large btn-success" %>
+  </div>
 <% end %>
